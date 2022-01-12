@@ -8,7 +8,7 @@ Imitación de la app de Whatsapp para el módulo de Javascript, jQuery y Angular
 * [LinkedIn](www.linkedin.com/in/miriamandresdev)
 
 ## Ver ejemplo en vivo 
-Puedes ver el proyecto en directo aquí [https://miriandres.github.io/Whatsapp-copycat/](https://miriandres.github.io/Whatsapp-copycat/)
+Puedes ver el proyecto en directo aquí [https://miriandres.github.io/def-angular/](https://miriandres.github.io/def-angular/)
 
 ## Construido con 🛠️
 * Angular
