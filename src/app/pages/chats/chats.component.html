@@ -1,0 +1,16 @@
+
+<app-minicabecera
+    [titulo]=" 'Chats' "
+    ></app-minicabecera>
+
+<div class="lista">
+    <span class="lista__span">Listas de difusión</span>
+    <span class="lista__span">Crear grupo</span>
+</div>
+
+<app-usuario
+    *ngFor="let cadaUsuario of usuarios; index as i"
+    (click)=" viajar( cadaUsuario.id)"
+    [seccion]="'chats'"
+    [info]=" cadaUsuario "
+    ></app-usuario>

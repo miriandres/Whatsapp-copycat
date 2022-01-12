@@ -1,0 +1,32 @@
+
+<app-minicabecera
+[titulo]=" 'Estados'"
+></app-minicabecera>
+
+<main class="main">
+
+    <div class="profile">
+        <div class="profile__column">
+            <img class="profile__img" src="assets/usuario-anna.jpg" alt="Usuario">
+            <i class="profile__plus fas fa-plus"></i>
+        </div>
+        <div 
+            class="profile__column">
+            <h2 class="profile__h2">Mi estado</h2>
+            <h3 class="profile__h3">Añadir a mi estado</h3>
+        </div>
+        <div class="profile__column">
+            <div class="profile__pines">
+                <i class="profile__i fas fa-camera"></i>
+                <i class="profile__i fas fa-pen"></i> 
+            </div>
+        </div>
+    </div>
+
+    <h2 class="main__h2">Recientes</h2>
+    <app-usuario
+        *ngFor="let cadaUsuario of usuarios; index as i"
+        [seccion]="'estados'"
+        [info]=" cadaUsuario "></app-usuario>
+
+</main>

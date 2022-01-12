@@ -1,0 +1,107 @@
+@import 'mixins.scss', 'keyframes.scss', 'variables.scss';
+
+.conversacion {
+    height: 100%;
+    background: url(../../../assets/chat-fondo.jpg) center / cover repeat-y;
+    padding: 1em;
+    @include flexible ( column, nowrap, flex-start, space-between, initial );
+
+    &__fecha {
+        padding: .2em .7em;
+        background-color: $fecha;
+        align-self: center;
+        border-radius: 10px;
+    }
+
+    &__mensaje {
+        max-width: 85%;
+        min-width: 33%;
+        margin: 1em 0;
+        padding: .7em;
+        border-radius: 10px;
+        
+        &.yo {
+            background-color: $verde-mensaje;
+            align-self: flex-end;
+            text-align: end;
+        }
+        &.el {
+            background-color: $blanco-mensaje;
+        }
+    }
+    &__usuario {
+        color: #fe523a;
+        font-weight: bold;
+    }
+    &__texto {
+        display: block;
+    }
+    &__hora {
+        color: $gris-texto;
+        font-size: .8em;
+    }
+    .escribiendo {
+        padding: .5em 1em;
+        background-color: lightgrey;
+        opacity: 0;
+        align-self: center;
+        border-radius: 20px;
+        @include flexible ( row, nowrap, center, center, initial );
+        
+        &.ver {
+            opacity: 1;
+            transition: all .5s ease;
+        }
+
+        &__puntos {
+            width: 10px;
+            height: 10px;
+            margin: 0 .3em;
+            background-color: gray;
+            border-radius: 50%;
+
+            animation: escala 1s ease infinite both;
+            
+
+            &:nth-of-type(1){
+                animation-delay: .3s;
+            }
+            &:nth-of-type(2){
+                animation-delay: .6s;
+            }
+            &:nth-of-type(3){
+                animation-delay: .9s;
+            }
+        }
+    }
+}
+.mensajes {
+    position: fixed;
+    // bottom: 0;
+    bottom: 10%;
+    width: 100%;
+    padding: .7em;
+    // background-color: #efeff4;
+    background-color: $gris;
+    @include flexible ( row, nowrap, center, center, initial );
+
+    &__input{
+        width: calc(85% - 2em);
+        padding: .5em 1em;
+        border-radius: 20px;
+        border: 1px solid lightgray;
+    }
+    &__btn{
+        background-color: transparent;
+        color: $azul;
+
+        .icono {
+            width: calc(15% - 2em);
+            padding: .5em 1em;
+            font-size: 1.6em;
+        }
+    }
+}
+.recibidos {
+    bottom: 20%;
+}

@@ -1,0 +1,71 @@
+
+<app-minicabecera
+    [titulo]= " receptor.h2 "
+    [atrasBtn]= " true "
+    [editarBtn]= " false "
+    [escribirBtn]= " false "
+    [grabarBtn]= " true "
+    [llamarBtn]= " true "></app-minicabecera>
+
+<main class="conversacion">
+
+    <h2 class="conversacion__fecha">dom, 29 nov</h2>
+
+    <div 
+        *ngFor="let cadaCharla of receptor.conversacion; index as i"
+        class="conversacion__mensaje {{ cadaCharla.envio }}">
+
+        <span class="conversacion__usuario">{{ cadaCharla.usuario}}</span>
+        <span class="conversacion__texto">{{ cadaCharla.mensaje}}</span>
+        <span class="conversacion__hora">{{ cadaCharla.hora}}</span>
+
+    </div>
+    
+    <div 
+        class="escribiendo"
+        [ngClass]="{ 'ver' : escribiendo }">
+        <div class="escribiendo__puntos"></div>
+        <div class="escribiendo__puntos"></div>
+        <div class="escribiendo__puntos"></div>
+    </div>
+</main>
+
+<div class="mensajes">
+    <button class="mensajes__btn">
+        <i class="icono fas fa-plus"></i>
+    </button>
+    <input 
+        class="mensajes__input" 
+        type="text" 
+        placeholder="Introduce tu mensaje"
+        name=" valorInput "
+        (keydown)="usuarioEscribiendo()"
+        (focusout)="usuarioNoEscribiendo()"
+        [(ngModel)]=" valorInput ">
+    <button 
+        (click)="enviarMensaje()"
+        class="mensajes__btn">
+        <i class="icono fas fa-camera"></i>
+        <i class="icono fas fa-microphone"></i>
+    </button>
+</div>
+
+<div class="mensajes recibidos">
+    <button class="mensajes__btn">
+        <i class="icono fas fa-plus"></i>
+    </button>
+    <input 
+        class="mensajes__input" 
+        type="text" 
+        placeholder="Introduce tu mensaje"
+        name=" valorRecibido "
+        (keydown)="usuarioEscribiendo()"
+        (focusout)="usuarioNoEscribiendo()"
+        [(ngModel)]=" valorRecibido ">
+    <button 
+        (click)="recibirMensaje()"
+        class="mensajes__btn">
+        <i class="icono fas fa-camera"></i>
+        <i class="icono fas fa-microphone"></i>
+    </button>
+</div>

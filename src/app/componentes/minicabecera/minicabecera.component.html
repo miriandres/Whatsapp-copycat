@@ -1,0 +1,26 @@
+
+<header class="header">
+    <i 
+        *ngIf="atrasBtn"
+        (click)=" viajar()"
+        class="header__i fas fa-angle-left">
+    </i>    
+    <span 
+        *ngIf="editarBtn"
+        class="header__span">Editar
+    </span>
+    <h2 class="header__h2">{{ titulo }}</h2>
+    <i 
+        *ngIf="escribirBtn"
+        class="header__i fas fa-edit">
+    </i>
+    <i 
+        *ngIf="grabarBtn"
+        class="header__i fas fa-video">
+    </i>
+    <i 
+        *ngIf="llamarBtn"
+        class="header__i fas fa-phone-alt">
+    </i>
+</header>
+

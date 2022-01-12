@@ -1,0 +1,17 @@
+
+<header class="header">
+    <ul class="header__ul">
+      <li 
+        class="header__li"
+        *ngFor="let item of cabecera; index as i">
+          <a 
+            class="header__a" 
+            [ngClass]="{ 'este' : esActivo ( item.ruta )}"
+            (click)=" viajar( item.ruta ) ">
+            <i class="header__i {{ item.clase }}"></i>
+            <span class="header__span">{{ item.texto }}</span>
+          </a>
+      </li>
+    </ul>
+    <div class="header__notif">1</div>
+</header>

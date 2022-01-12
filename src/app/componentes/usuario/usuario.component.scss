@@ -1,0 +1,80 @@
+@import 'mixins.scss', 'keyframes.scss', 'variables.scss';
+
+.profile {
+    background-color: white;
+    padding: 0.5em 1em;
+    @include flexible ( row, nowrap, space-around, center, initial );
+    
+    &__column{
+
+        &:nth-child(1) {
+            width: 23%;
+            margin: 0 0 .5em;
+        }
+        &:nth-child(2) {
+            width: 60%;
+        }
+        &:nth-child(3) {
+            width: 20%;
+            text-align: end; // añadido
+        }
+    }
+    &__circulo {
+        width: 68px;
+        height: 68px;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        @include flexible ( row, nowrap, center, center, initial );
+
+        &.activo {
+            border: 2px solid $azul;
+        }
+    }
+    &__date {
+        color: gray;
+        font-size: .8em;
+    }
+    &__pines{
+        @include flexible( row, nowrap, flex-end, center, initial );
+    }
+    &__img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    &__h2{
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    &__h3 {
+        color: gray;
+    }
+    &__chat {
+        font-size: .95em;
+        color: gray;
+    }
+    &__llamada {
+        color: gray;
+        span {
+            margin: 0 0 0 .6em;
+        }
+    }
+    &__estado {
+        color: gray;
+    }
+    .simple {
+        @include flexible( row, nowrap, flex-end, center, initial );
+    }
+    &__i {
+        width: 25px;
+        height: 25px;
+        margin-left: .5em;
+        padding: .8em; //añadido
+        font-size: .9em;
+        color: #2f8ff2;
+        // background-color: gray;
+        border: 2px solid #2f8ff2;
+        border-radius: 50%;
+        @include flexible( row, nowrap, center, center, initial );
+    }
+}

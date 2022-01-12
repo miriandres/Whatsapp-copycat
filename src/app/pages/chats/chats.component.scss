@@ -1,0 +1,53 @@
+@import 'mixins.scss', 'keyframes.scss', 'variables.scss';
+
+.main {
+    width: 100%;
+    background-color: lightgray;
+    overflow: hidden;
+}
+.lista {
+    padding: .5em 1em;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    @include flexible ( row, nowrap, space-between, center, initial );
+    &__span {
+        color: #067bf5;
+    }
+}
+.profile {
+    padding: 1em;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    @include flexible ( row, nowrap, space-around, center, initial );
+    
+    &__column{
+
+        &:nth-of-type(1){width: 20%; }
+        &:nth-of-type(2){ width: 60%; }
+        &:nth-of-type(3) { 
+            width: 20%;
+            text-align: end;
+            @include flexible ( row, nowrap, flex-end, center, initial );
+        }
+    }
+    &__img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    &__h2{
+        font-weight: 1.4em;
+    }
+    &__h3 {
+        color: gray;
+    }
+    &__i {
+        width: 20px;
+        height: 20px;
+        padding: .5em;
+        color: blue;
+        background-color: lightgrey;
+        border-radius: 50%;
+        @include flexible ( row, nowrap, center, center, initial );
+    }
+}

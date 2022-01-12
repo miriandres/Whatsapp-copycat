@@ -1,0 +1,29 @@
+
+<section class="profile">
+    <div class="profile__column">
+        <div class="profile__circulo" [ngClass]="{'activo': seccion === 'estados' }">
+            <img class="profile__img" src="{{info.img}}" alt="Usuario">
+        </div>
+    </div>
+    <div class="profile__column">
+        <h2 class="profile__h2">{{info.h2}}</h2>
+        <h3 class="profile__h3" *ngIf="seccion === 'configuracion'">{{info.h3}}</h3>
+        <p class="profile__chat" *ngIf="seccion === 'chats'">{{info.chat}}</p>
+        <p class="profile__llamada" *ngIf="seccion === 'llamadas'"><i class="fas fa-phone"></i><span>{{info.llamada}}</span></p>
+        <p class="profile__estado" *ngIf="seccion === 'estados'">{{info.estado}}</p>
+    </div>
+    <div class="profile__column" *ngIf="seccion !== 'llamadas'">
+        <span class="profile__date" *ngIf="seccion === 'chats'">{{info.date}}</span>
+        <div class="profile__pines">
+            <i class="profile__i fas fa-volume-mute" *ngIf="seccion === 'chats'"></i>
+            <i class="profile__i fas fa-thumbtack" *ngIf="seccion === 'chats'"></i> 
+            <i class="profile__i fas fa-qrcode" *ngIf="seccion === 'configuracion'"></i> 
+        </div>
+    </div>
+    <div class="profile__column simple" *ngIf="seccion === 'llamadas'">
+        <span class="profile__dia" *ngIf="seccion === 'llamadas'">miércoles</span>
+        <div class="profile__pines">
+            <i class="profile__i fas fa-info"></i>
+        </div>
+    </div>
+</section>
