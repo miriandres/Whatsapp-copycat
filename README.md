@@ -1,5 +1,6 @@
-## Descripción 🏝
+![Whatsapp-copycat](https://user-images.githubusercontent.com/86624207/153714612-4a29db43-3485-4085-87fa-592f69f0d4f9.png)
 
+# Whatsapp Copycat
 Imitación de la app de Whatsapp para el módulo de Javascript, jQuery y Angular en Trazos. No ha sido probada para tener soporte crossbrowsing.
 
 ## Autor ✒️
