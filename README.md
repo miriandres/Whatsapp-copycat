@@ -4,7 +4,7 @@
 Imitación de la app de Whatsapp para el módulo de Javascript, jQuery y Angular en Trazos. No ha sido probada para tener soporte crossbrowsing.
 
 ## Autor ✒️
-**Miriam Andrés** - *Documentación y trabajo inicial*
+**Miriam Andrés** - *Documentación y código*
 * [Github](https://github.com/miriandres)
 * [LinkedIn](www.linkedin.com/in/miriamandresdev)
 
@@ -19,7 +19,7 @@ Puedes ver el proyecto en directo aquí [https://miriandres.github.io/Whatsapp-c
 * NodeJS
   
 ## Contratación
-Si quieres contratarme puedes escribirme a miriandres.dev@gmail.com para consultas.
+Si quieres contratarme puedes escribirme a hello@miriamandres.com para consultas.
 
 ## Instalación 
 * Descargar e instalar [NodeJS](https://nodejs.org/en/download/)
