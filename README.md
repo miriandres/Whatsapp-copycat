@@ -13,11 +13,11 @@ Imitación de la app de Whatsapp para el módulo de Javascript, jQuery y Angular
 Puedes ver el proyecto en directo aquí [https://miriandres.github.io/Whatsapp-copycat/](https://miriandres.github.io/Whatsapp-copycat/)
 
 ## Construido con 🛠️
-* Angular
-* Angular CLI
-* SASS
-* Typescript
-* NodeJS
+[![Angular](https://img.shields.io/static/v1?label=&message=Angular&color=DD0031&logo=angular&logoColor=white&style=for-the-badge)](https://angular.io/)
+[![SASS](https://img.shields.io/static/v1?label=&message=SASS&color=CC6699&logo=sass&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/static/v1?label=&message=TypeScript&color=3178C6&logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org/)
+[![NodeJS](https://img.shields.io/static/v1?label=&message=NodeJS&color=339933&logo=nodedotjs&logoColor=white&style=for-the-badge)](https://nodejs.org/en/)
+[![BEM Methodology](https://img.shields.io/static/v1?label=&message=BEM%20Methodology&color=17A1E6&logo=bem&logoColor=white&style=for-the-badge)](http://getbem.com/)
   
 ## Contratación
 Si quieres contratarme puedes escribirme a hello@miriamandres.com para consultas.
