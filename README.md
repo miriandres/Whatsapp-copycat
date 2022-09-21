@@ -5,6 +5,7 @@ Imitación de la app de Whatsapp para el módulo de Javascript, jQuery y Angular
 
 ## Autor ✒️
 **Miriam Andrés** - *Documentación y código*
+* [Website](https://miriamandres.com)
 * [Github](https://github.com/miriandres)
 * [LinkedIn](www.linkedin.com/in/miriamandresdev)
 
