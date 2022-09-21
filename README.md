@@ -1,16 +1,20 @@
+# Whatsapp Copycat
 ![Whatsapp-copycat](https://user-images.githubusercontent.com/86624207/153714612-4a29db43-3485-4085-87fa-592f69f0d4f9.png)
 
-# Whatsapp Copycat
-Imitación de la app de Whatsapp para el módulo de Javascript, jQuery y Angular en Trazos. No ha sido probada para tener soporte crossbrowsing.
+<div align="center">
+  
+  Imitación de la app de [Whatsapp](https://www.whatsapp.com) para el módulo de Javascript, jQuery y Angular en Trazos. No ha sido probada para tener soporte crossbrowsing.
+
+  [![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=00cbaf&style=for-the-badge)](https://miriandres.github.io/Whatsapp-copycat/)
+  [![Github Repository](https://img.shields.io/static/v1?label=&message=Github%20Repository&color=00cbaf&style=for-the-badge&logo=github&logoColor=white)](https://github.com/miriandres/Whatsapp-copycat)
+  
+</div>
 
 ## Autor ✒️
 **Miriam Andrés** - *Documentación y código*
 * [Website](https://miriamandres.com)
 * [Github](https://github.com/miriandres)
 * [LinkedIn](www.linkedin.com/in/miriamandresdev)
-
-## Ver ejemplo en vivo 
-Puedes ver el proyecto en directo aquí [https://miriandres.github.io/Whatsapp-copycat/](https://miriandres.github.io/Whatsapp-copycat/)
 
 ## Construido con 🛠️
 [![Angular](https://img.shields.io/static/v1?label=&message=Angular&color=DD0031&logo=angular&logoColor=white&style=for-the-badge)](https://angular.io/)
