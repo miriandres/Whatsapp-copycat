@@ -21,7 +21,7 @@ export class MinicabeceraComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  viajar( x ) {
+  viajar() {
     this.router.navigate([ '/chats'])
   }
 

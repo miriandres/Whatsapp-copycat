@@ -1,40 +1,12 @@
 import { Injectable } from '@angular/core';
+import { UsersInfo } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatosService {
 
-
-// -------------- Componentes --------------
-  cabecera : Array<Object> = [
-    {
-      ruta  : '/estados',
-      clase : 'fas fa-circle',
-      texto : 'Estados'
-    },
-    {
-      ruta  : '/llamadas',
-      clase : 'fas fa-phone-alt',
-      texto : 'Llamadas'
-    },
-    {
-      ruta  : '/camara',
-      clase : 'fas fa-camera',
-      texto : 'Cámara'
-    },
-    {
-      ruta  : '/chats',
-      clase : 'fas fa-comments',
-      texto : 'Chats'
-    },
-    {
-      ruta  : '/configuracion',
-      clase : 'fas fa-cog',
-      texto : 'Configuración'
-    },
-  ]
-  usuarios : Array<Object> = [
+  usuarios : Array<UsersInfo> = [
     {
       id      :  1,
       h2      :  'Yodita lovers ♡♡',
@@ -46,16 +18,14 @@ export class DatosService {
       img     :  'assets/baby-yoda.jpg',
       conversacion : [
         {
-          usuario : 'Miri',
-          envio   : 'yo',
+          envio   : 'outgoing',
           mensaje : '¿Crees que podré usar ya la fuerza?',
-          hora    :  12.39
+          hora    :  1603994802000
         },
         {
-          usuario : 'Yodita',
-          envio   : 'el',
+          envio   : 'incoming',
           mensaje : 'Mucho que aprender todavía tienes',
-          hora    : 12.43
+          hora    : 1603994862000
         }
       ]
     },
@@ -70,16 +40,14 @@ export class DatosService {
       img          :  'assets/usuario-elsa.jpg',
       conversacion : [
         {
-          usuario : 'Miri',
-          envio   : 'yo',
+          envio   : 'outgoing',
           mensaje : 'Let it go',
-          hora    :  12.39
+          hora    :  1603992042000
         },
         {
-          usuario : 'Elsa',
-          envio   : 'el',
+          envio   : 'incoming',
           mensaje : 'The cold never bother me anyway',
-          hora    : 12.42
+          hora    : 1603992402000
         }
       ]
     },
@@ -91,7 +59,14 @@ export class DatosService {
       estado  :  'Hace 10 horas',
       date    :  '15:02',
       llamada :  'Saliente',
-      img     :  'assets/usuario-mulan.jpg'
+      img     :  'assets/usuario-mulan.jpg',
+      conversacion : [
+        {
+          envio   : 'incoming',
+          mensaje : '¿Mis ancestros envían a un lagarto para ayudarme?',
+          hora    : 1602075720000
+        }
+      ]
     },
     {
       id      :  4,
@@ -99,9 +74,16 @@ export class DatosService {
       h3      :  'No disponible',
       chat    :  '¡No es un príncipe! Era el chico del mercado',
       estado  :  'sábado',
-      date    :  'Ayer',
+      date    :  'ayer',
       llamada :  'Saliente',
-      img     :  'assets/usuario-jasmine.jpg'
+      img     :  'assets/usuario-jasmine.jpg',
+      conversacion : [
+        {
+          envio   : 'incoming',
+          mensaje : '¡No es un príncipe! Era el chico del mercado',
+          hora    : 1602002700000
+        }
+      ]
     },
     {
       id      :  5,
@@ -111,7 +93,14 @@ export class DatosService {
       estado  :  'sábado',
       date    :  'jueves',
       llamada :  'Entrante',
-      img     :  'assets/usuario-4.jpg'
+      img     :  'assets/usuario-4.jpg',
+      conversacion : [
+        {
+          envio   : 'incoming',
+          mensaje : '🔥🔥🔥',
+          hora    : 1601922600000
+        }
+      ]
     },
     {
       id      :  6,
@@ -119,9 +108,16 @@ export class DatosService {
       h3      :  'No disponible',
       chat    :  'SAURRR!',
       estado  :  'Hace 1 día',
-      date    :  '27/10/2020',
+      date    :  '27/10/20',
       llamada :  'Perdida',
-      img     :  'assets/usuario-5.jpg'
+      img     :  'assets/usuario-5.jpg',
+      conversacion : [
+        {
+          envio   : 'incoming',
+          mensaje : 'SAURRR!',
+          hora    : 1603801440000
+        }
+      ]
     },
     {
       id      :  7,
@@ -129,9 +125,16 @@ export class DatosService {
       h3      :  'No disponible',
       chat    :  '¿Pika pika?',
       estado  :  'Hace 2 días',
-      date    :  '26/10/2020',
+      date    :  '26/10/20',
       llamada :  'Entrante',
-      img     :  'assets/usuario-6.jpg'
+      img     :  'assets/usuario-6.jpg',
+      conversacion : [
+        {
+          envio   : 'incoming',
+          mensaje : '¿Pika pika?',
+          hora    : 1603744080000
+        }
+      ]
     },
     {
       id      :  8,
@@ -139,9 +142,16 @@ export class DatosService {
       h3      :  'No disponible',
       chat    :  'PSYY-DUCK, PSYY-DUCK',
       estado  :  'Hace 5 horas',
-      date    :  '26/10/2020',
+      date    :  '26/10/20',
       llamada :  'Entrante',
-      img     :  'assets/usuario-7.jpg'
+      img     :  'assets/usuario-7.jpg',
+      conversacion : [
+        {
+          envio   : 'incoming',
+          mensaje : '¡PSYY-DUCK, PSYY-DUCK',
+          hora    : 1603748160000
+        }
+      ]
     },
     {
       id      :  9,
@@ -149,47 +159,17 @@ export class DatosService {
       h3      :  'No disponible',
       chat    :  'Priii',
       estado  :  'Hace 2 horas',
-      date    :  '20/10/2020',
+      date    :  '20/10/20',
       llamada :  'Entrante',
-      img     :  'assets/usuario-8.jpg'
+      img     :  'assets/usuario-8.jpg',
+      conversacion : [
+        {
+          envio   : 'incoming',
+          mensaje : 'Priii',
+          hora    : 1603198620000
+        }
+      ]
     }
-  ]
-
-// ------------- Configuración -------------
-  config : Array<Object> = [
-    {
-      icon : 'fas fa-star',
-      h4   : 'Mensajes destacados'
-    },
-    {
-      icon : 'fas fa-laptop',
-      h4   : 'Whatsapp Web'
-    },
-    {
-      icon : 'fas fa-key',
-      h4   : 'Cuenta'
-    },
-    {
-      icon : 'fab fa-whatsapp',
-      h4   : 'Chats',
-      num  : '1'
-    },
-    {
-      icon : 'far fa-square',
-      h4   : 'Notificaciones'
-    },
-    {
-      icon : 'fas fa-exchange-alt',
-      h4   : 'Almacenamiento y datos'
-    },
-    {
-      icon : 'fas fa-info',
-      h4   : 'Ayuda'
-    },
-    {
-      icon : 'far fa-heart',
-      h4   : 'Invitar amigos'
-    },
   ]
 
   constructor() { }

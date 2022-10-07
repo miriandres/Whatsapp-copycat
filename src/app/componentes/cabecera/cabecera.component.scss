@@ -1,46 +1,48 @@
-@import 'mixins.scss', 'keyframes.scss','variables.scss';
+@import '_mixins.scss', '_variables.scss';
 
 .header {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    min-height: 80px;
     padding: 1em 0;
-    background-color: $gris;
-    border-top: 1px solid lightgrey;
-    color: black;
+    background-color: var(--c-header);
+    border-top: 1px solid var(--c-border);
+    color: var(--black);
     
     &__ul {
-        @include flexible ( row, nowrap, space-around, center, initial ); 
+        @include flex ( row, nowrap, space-around, center ); 
     }
-    &__li{}
+    &__li {
+        position: relative;
+    }
     &__a {
-        @include flexible ( column, nowrap, center, center, initial );
+        @include flex ( column, nowrap, center, center );
     }
-    &__i{
+    &__i {
+        margin: 0 0 0.2em;
         font-size: 1.4em;
-        margin: 0 0 .2em;
-        color: grey;
+        color: var(--c-sec-text);
     }
-    &__span{
-        font-size: .8em;
-        color: grey;
+    &__span {
+        font-size: 0.8em;
+        color: var(--c-sec-text);
     }
-    &__notif {
+    &__num {
         position: absolute;
-        bottom: 65%;
-        right: 29%;
+        top: calc(5% - 10px);
+        right: calc(-3% - 10px);
         width: 20px;
         height: 20px;
-        font-size: .75em;
-        color: white;
-        background-color: red;
+        font-size: 0.75em;
+        color: var(--white);
+        background-color: var(--c-notif);
         border-radius: 50%;
-        @include flexible( row , nowrap , center , center , initial );
+        @include flex( row , nowrap , center , center  );
     }
-    .este .header__i, 
-    .este .header__span {
-        color: #007cff;
+    .active .header__i, 
+    .active .header__span {
+        color: var(--c-accent);
     }
 }

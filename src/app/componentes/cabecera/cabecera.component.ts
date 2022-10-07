@@ -1,6 +1,6 @@
+import { AppService } from './../../servicios/app.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DatosService } from 'src/app/servicios/datos.service';
 
 @Component({
   selector: 'app-cabecera',
@@ -14,9 +14,9 @@ export class CabeceraComponent implements OnInit {
   constructor(
     private activatedRoute : ActivatedRoute,
     private router : Router,
-    private datos : DatosService
+    private appService : AppService
   ) {
-    this.cabecera = datos.cabecera
+    this.cabecera = appService.cabecera
   }
 
   ngOnInit(): void {
@@ -26,18 +26,6 @@ export class CabeceraComponent implements OnInit {
   }
 
   esActivo( x ){
-    
-    //   console.log( x ) //El parámetro
-    //   console.log( this.router.url )// La página actual
-
-  return x === this.router.url ? true : false   //Versión corta
-
-  //----------- Versión larga ----------
-  // if( x === this.router.url ){
-  //   return true
-  //   }else{
-  //        return false
-  //   }
-
+    return x === this.router.url ? true : false
   }
 }

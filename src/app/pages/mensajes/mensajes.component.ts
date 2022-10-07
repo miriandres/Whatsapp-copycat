@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute , Params, Router } from '@angular/router';
+import { ActivatedRoute , Router } from '@angular/router';
 import { DatosService } from 'src/app/servicios/datos.service';
 
 @Component({
@@ -11,14 +11,14 @@ export class MensajesComponent implements OnInit {
 
   todosUsuarios
   receptor
-  id            = 0
-  hora          
-  valorInput    = ''
-  valorRecibido = ''
-  escribiendo   = false
-  dateTime : Date
+  usuario       : string
+  id            : number = 0             
+  valorInput    : string = ''
+  valorRecibido : string = ''
+  escribiendo   : boolean  = false
+  hora          : number  = Date.now()
   
-  conversacion = []
+  conversacion  : Array<any> = []
 
   constructor(
     public rutaActiva : ActivatedRoute,
@@ -30,39 +30,35 @@ export class MensajesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log( this.id )
-    console.log( this.todosUsuarios )
-
     this.receptor = this.todosUsuarios.find( cadaUsuario => cadaUsuario.id == this.id )
     this.conversacion = this.receptor.conversacion
+    this.usuario = this.todosUsuarios.find(cadaUsuario => cadaUsuario.conversacion.usuario == this.usuario)
   }
-
-  // nombre1 = this.receptor.conversacion[0].usuario
-  // nombre2 = this.receptor.conversacion[1].usuario
-
-  enviarMensaje() {
-    
+  
+  enviarMensaje(): void {
     let nuevoMensaje : any = {
-      // usuario :  this.nombre1,    //(conversacion.usuario)
-      envio   : 'yo',
+      envio   : 'outgoing',
       mensaje : this.valorInput,
-      hora    : this.hora
+      hora    : this.hora,
     }
     this.receptor.conversacion.push( nuevoMensaje )
+    this.valorInput = ''
+    this.usuarioNoEscribiendo()
   }
-  recibirMensaje() {
+  recibirMensaje(): void {
     let nuevoMensaje : any = {
-      // usuario : this.nombre2,    //(conversacion.usuario)
-      envio   : 'el',
+      envio   : 'incoming',
       mensaje : this.valorRecibido,
-      hora    : this.hora
+      hora    : this.hora,
     }
     this.receptor.conversacion.push( nuevoMensaje )
+    this.valorRecibido = ''
+    this.usuarioNoEscribiendo()
   }
-  usuarioEscribiendo(){
+  usuarioEscribiendo(): void {
     this.escribiendo = true
   }
-  usuarioNoEscribiendo(){
+  usuarioNoEscribiendo():void {
     this.escribiendo = false
   }
 }

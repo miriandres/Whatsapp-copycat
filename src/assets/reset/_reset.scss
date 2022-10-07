@@ -52,7 +52,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 	content: none;
 }
 ::selection {
-    background-color: var(--c-secondary);
+    background-color: var(--c-accent);
     color: var(--white);
 }
 

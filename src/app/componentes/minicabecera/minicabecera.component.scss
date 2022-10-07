@@ -1,27 +1,28 @@
-@import 'mixins.scss', 'keyframes.scss', 'variables.scss';
+@import '_mixins.scss', '_variables.scss';
 
 .header{
     position: fixed;
     top: 0;
     width: 100%;
     padding: 2.5em 1em 1em;
-    background-color: $gris;
-    border-bottom: 1px solid lightgrey;
-    @include flexible ( row, nowrap, space-between, center, initial );
+    background-color: var(--c-header);
+    border-bottom: 1px solid var(--c-border);
+    @include flex ( row, nowrap, space-between, center );
 
-    &__span{
-        color: $azul;
-        font-weight: 600; // añadido
-    }
     &__h2{
         width: 50%;
         margin: auto;
         text-align: center;
         font-weight: 600;
     }
-    &__i {
-        color: $azul;
-        font-size: 1.3em;
+    &__span{
+        color: var(--c-accent);
+        font-weight: 600;
+    }
+    &__svg {
+        width: 1.5em;
+        height: 1.5em;
+        color: var(--c-accent);
 
         &:last-child {    
             margin-left: 1em;

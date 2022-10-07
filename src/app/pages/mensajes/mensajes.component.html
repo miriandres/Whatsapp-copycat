@@ -14,10 +14,8 @@
     <div 
         *ngFor="let cadaCharla of receptor.conversacion; index as i"
         class="conversacion__mensaje {{ cadaCharla.envio }}">
-
-        <span class="conversacion__usuario">{{ cadaCharla.usuario}}</span>
-        <span class="conversacion__texto">{{ cadaCharla.mensaje}}</span>
-        <span class="conversacion__hora">{{ cadaCharla.hora}}</span>
+        <span class="conversacion__texto">{{ cadaCharla.mensaje }}</span>
+        <span class="conversacion__hora">{{ cadaCharla.hora | date:'HH:mm' }}</span>
 
     </div>
     
@@ -32,7 +30,9 @@
 
 <div class="mensajes">
     <button class="mensajes__btn">
-        <i class="icono fas fa-plus"></i>
+        <svg class="mensajes__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+        </svg>
     </button>
     <input 
         class="mensajes__input" 
@@ -41,18 +41,27 @@
         name=" valorInput "
         (keydown)="usuarioEscribiendo()"
         (focusout)="usuarioNoEscribiendo()"
+        (keyup.enter)="enviarMensaje()"
         [(ngModel)]=" valorInput ">
     <button 
         (click)="enviarMensaje()"
         class="mensajes__btn">
-        <i class="icono fas fa-camera"></i>
-        <i class="icono fas fa-microphone"></i>
+        <svg class="mensajes__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
+            <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+        </svg>
+        <svg class="mensajes__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+        </svg>
     </button>
 </div>
 
 <div class="mensajes recibidos">
     <button class="mensajes__btn">
-        <i class="icono fas fa-plus"></i>
+        <svg class="mensajes__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+        </svg>
     </button>
     <input 
         class="mensajes__input" 
@@ -61,11 +70,18 @@
         name=" valorRecibido "
         (keydown)="usuarioEscribiendo()"
         (focusout)="usuarioNoEscribiendo()"
+        (keyup.enter)="recibirMensaje()"
         [(ngModel)]=" valorRecibido ">
     <button 
         (click)="recibirMensaje()"
         class="mensajes__btn">
-        <i class="icono fas fa-camera"></i>
-        <i class="icono fas fa-microphone"></i>
+        <svg class="mensajes__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
+            <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+        </svg>
+        <svg class="mensajes__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+        </svg>
     </button>
 </div>

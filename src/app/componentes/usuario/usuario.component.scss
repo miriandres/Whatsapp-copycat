@@ -1,80 +1,95 @@
-@import 'mixins.scss', 'keyframes.scss', 'variables.scss';
+@import '_mixins.scss', '_variables.scss';
 
 .profile {
-    background-color: white;
+    background-color: var(--white);
     padding: 0.5em 1em;
-    @include flexible ( row, nowrap, space-around, center, initial );
+    @include flex ( row, nowrap, space-around, center );
     
-    &__column{
-
+    &__column {
         &:nth-child(1) {
             width: 23%;
-            margin: 0 0 .5em;
+            margin: 0 0 0.5em;
         }
         &:nth-child(2) {
             width: 60%;
         }
         &:nth-child(3) {
             width: 20%;
-            text-align: end; // añadido
+            text-align: end;
         }
     }
-    &__circulo {
+    &__circle {
+        position: relative;
         width: 68px;
         height: 68px;
         border: 2px solid transparent;
         border-radius: 50%;
-        @include flexible ( row, nowrap, center, center, initial );
+        @include flex ( row, nowrap, center, center );
 
         &.activo {
-            border: 2px solid $azul;
+            border: 2px solid var(--c-accent);
         }
     }
     &__date {
-        color: gray;
-        font-size: .8em;
+        margin-right: 0.5em;
+        color: var(--c-sec-text);
+
+        &--small {
+            font-size: 0.8em;
+        }
     }
-    &__pines{
-        @include flexible( row, nowrap, flex-end, center, initial );
+    &__pines {
+        @include flex( row, nowrap, flex-end, center );
     }
     &__img {
         width: 60px;
         height: 60px;
         border-radius: 50%;
     }
-    &__h2{
+    &__h2 {
         font-size: 1.2em;
         font-weight: bold;
     }
-    &__h3 {
-        color: gray;
+    &__h3,
+    &__estado {
+        color: var(--c-sec-text);
     }
     &__chat {
-        font-size: .95em;
-        color: gray;
+        font-size: 0.95em;
+        color: var(--c-sec-text);
     }
     &__llamada {
-        color: gray;
-        span {
-            margin: 0 0 0 .6em;
-        }
-    }
-    &__estado {
-        color: gray;
+        color: var(--c-sec-text);
+        @include flex( row, nowrap, flex-start, center);
     }
     .simple {
-        @include flexible( row, nowrap, flex-end, center, initial );
+        @include flex( row, nowrap, flex-end, center );
     }
-    &__i {
-        width: 25px;
-        height: 25px;
-        margin-left: .5em;
-        padding: .8em; //añadido
-        font-size: .9em;
-        color: #2f8ff2;
-        // background-color: gray;
-        border: 2px solid #2f8ff2;
+    &__icon {
+        margin-left: 0.5em;
+        padding: 0.6em;
         border-radius: 50%;
-        @include flexible( row, nowrap, center, center, initial );
+        background-color: var(--c-main-bg);
+    }
+    &__svg {
+        width: 1em;
+        height: 1em;
+        margin-right: 0.5em;
+
+        &--big {
+            width: 1.4em;
+            height: 1.4em;
+            margin: 0;
+            color: var(--c-accent);
+        }
+        &--plus {
+            position: absolute;
+            bottom: -6%;
+            right: -15%;
+            padding: 0.3em;
+            color: var(--white);
+            background-color: var(--c-accent);
+            border-radius: 50%;
+        }
     }
 }

@@ -1,9 +1,8 @@
-@import 'mixins.scss', 'keyframes.scss';
+@import '_mixins.scss', '_keyframes.scss';
 
 .router-outlet {
     position: relative;
     height: calc( 100vh - 150px);
     margin-top: 5em;
     overflow-x: hidden;
-    // background-color: #e8e8e8;
 }

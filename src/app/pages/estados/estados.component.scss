@@ -1,71 +1,12 @@
-@import 'mixins.scss', 'keyframes.scss', 'variables.scss';
+@import '_variables.scss';
 
 .main {
-
-    .profile {
-        background-color: white;
-        margin: 2em 0;
-        padding: 0.5em 1em;
-        @include flexible ( row, nowrap, space-around, center, initial );
-        
-        &__column{
-            position: relative;
-    
-            &:nth-child(1) {
-                width: 20%;
-            }
-            &:nth-child(2) {
-                width: 60%;
-            }
-            &:nth-child(3) {
-                width: 20%;
-                text-align: end; // añadido
-            }
-        }
-        &__pines{
-            @include flexible( row, nowrap, flex-end, center, initial );
-        }
-        &__img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-        }
-        &__h2{
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        &__h3 {
-            color: gray;
-        }
-        &__plus {
-            position: absolute;
-            bottom: -6%;
-            right: 11%;
-            width: 24px;
-            height: 24px;
-            color: white;
-            background-color: $azul;
-            border-radius: 50%;
-            @include flexible( row, nowrap, center, center, initial );
-        }
-        &__i {
-            width: 25px;
-            height: 25px;
-            margin-left: .5em;
-            padding: 1em; //añadido
-            font-size: 1.3em;
-            color: #2f8ff2;
-            background-color: #efeff4;
-            border-radius: 50%;
-            @include flexible( row, nowrap, center, center, initial );
-        }
-    }
+    margin: 1.5em 0 3.5em;
 
     &__h2 {
         padding: 0.5em 1em;
-        color: gray;
-        // font-weight: bold;
+        color: var(--c-sec-text);
         text-transform: uppercase;
-        border-bottom: 1px solid lightgray;
+        border-bottom: 1px solid var(--c-border);
     }
 }

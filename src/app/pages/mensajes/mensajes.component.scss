@@ -1,107 +1,98 @@
-@import 'mixins.scss', 'keyframes.scss', 'variables.scss';
+@import '_mixins.scss', '_keyframes.scss', '_variables.scss';
 
 .conversacion {
     height: 100%;
-    background: url(../../../assets/chat-fondo.jpg) center / cover repeat-y;
+    background: url("/assets/chat-fondo.jpg") center / cover repeat-y;
     padding: 1em;
-    @include flexible ( column, nowrap, flex-start, space-between, initial );
+    @include flex ( column, nowrap, flex-start, baseline );
 
     &__fecha {
-        padding: .2em .7em;
-        background-color: $fecha;
+        padding: 0.2em 0.7em;
+        background-color: var(--c-date);
         align-self: center;
         border-radius: 10px;
     }
-
     &__mensaje {
+        min-width: 200px;
         max-width: 85%;
-        min-width: 33%;
         margin: 1em 0;
-        padding: .7em;
+        padding: 0.7em;
         border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
         
-        &.yo {
-            background-color: $verde-mensaje;
+        &.outgoing {
+            background-color: var(--c-outgoing);
             align-self: flex-end;
             text-align: end;
         }
-        &.el {
-            background-color: $blanco-mensaje;
+        &.incoming {
+            background-color: var(--c-incoming);
         }
     }
-    &__usuario {
-        color: #fe523a;
-        font-weight: bold;
-    }
-    &__texto {
-        display: block;
-    }
     &__hora {
-        color: $gris-texto;
-        font-size: .8em;
+        align-self: flex-end;
+        color: var(--c-sec-text);
+        font-size: 0.8em;
     }
     .escribiendo {
-        padding: .5em 1em;
-        background-color: lightgrey;
+        padding: 0.5em 1em;
+        background-color: var(--c-border);
         opacity: 0;
         align-self: center;
         border-radius: 20px;
-        @include flexible ( row, nowrap, center, center, initial );
+        @include flex ( row, nowrap, center, center );
         
         &.ver {
             opacity: 1;
-            transition: all .5s ease;
+            transition: opacity 0.5s ease;
         }
-
         &__puntos {
             width: 10px;
             height: 10px;
-            margin: 0 .3em;
-            background-color: gray;
+            margin: 0 0.3em;
+            background-color: var(--c-sec-text);
             border-radius: 50%;
+            animation: dot-animation 1s ease infinite both;
 
-            animation: escala 1s ease infinite both;
-            
-
-            &:nth-of-type(1){
-                animation-delay: .3s;
-            }
-            &:nth-of-type(2){
-                animation-delay: .6s;
-            }
-            &:nth-of-type(3){
-                animation-delay: .9s;
+            @for $i from 1 to 4 {
+                &:nth-of-type(#{$i}){
+                    animation-delay: $i * 0.3s;
+                }
             }
         }
     }
 }
 .mensajes {
-    position: fixed;
-    // bottom: 0;
+    position: absolute;
     bottom: 10%;
     width: 100%;
-    padding: .7em;
-    // background-color: #efeff4;
-    background-color: $gris;
-    @include flexible ( row, nowrap, center, center, initial );
+    padding: 0.7em;
+    background-color: var(--c-header);
+    @include flex ( row, nowrap, space-between, center );
 
-    &__input{
+    &__input {
         width: calc(85% - 2em);
-        padding: .5em 1em;
+        padding: 0.5em 1em;
         border-radius: 20px;
-        border: 1px solid lightgray;
+        border: 1px solid var(--c-border);
     }
-    &__btn{
+    &__btn {
         background-color: transparent;
-        color: $azul;
+        color: var(--c-accent);
+        @include flex ( row, nowrap, center, center );
+    }
+    &__svg {
+        width: 1.8em;
+        height: 1.8em;
+        padding: 0em 0.5em;
 
-        .icono {
-            width: calc(15% - 2em);
-            padding: .5em 1em;
-            font-size: 1.6em;
+        &:last-child {
+            padding: 0;
         }
     }
 }
 .recibidos {
-    bottom: 20%;
+    bottom: 23%;
 }

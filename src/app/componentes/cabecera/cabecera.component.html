@@ -6,12 +6,12 @@
         *ngFor="let item of cabecera; index as i">
           <a 
             class="header__a" 
-            [ngClass]="{ 'este' : esActivo ( item.ruta )}"
+            [ngClass]="{ 'active' : esActivo ( item.ruta )}"
             (click)=" viajar( item.ruta ) ">
             <i class="header__i {{ item.clase }}"></i>
-            <span class="header__span">{{ item.texto }}</span>
+            <span class="header__span">{{ item.span }}</span>
+            <div *ngIf="item.num" class="header__num">{{item.num}}</div>
           </a>
       </li>
     </ul>
-    <div class="header__notif">1</div>
 </header>

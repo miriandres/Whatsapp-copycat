@@ -1,29 +1,71 @@
 
 <section class="profile">
     <div class="profile__column">
-        <div class="profile__circulo" [ngClass]="{'activo': seccion === 'estados' }">
+        <div class="profile__circle" [ngClass]="{'activo': seccion === 'estados' }">
             <img class="profile__img" src="{{info.img}}" alt="Usuario">
+            <svg class="profile__svg profile__svg--plus" version="1.1" viewBox="0 0 60.364 60.364" *ngIf="seccion === 'profile'" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                <path d="m54.454 23.18-18.609-2e-3 -1e-3 -17.268c1e-3 -3.264-2.646-5.91-5.91-5.91-3.263 0-5.909 2.646-5.909 5.91v17.269l-18.115-1e-3c-3.264 1e-3 -5.91 2.647-5.91 5.91 2e-3 3.264 2.646 5.909 5.91 5.909h18.115v19.457c0 3.267 2.646 5.91 5.91 5.91s5.909-2.646 5.91-5.908v-19.459h18.611c3.262 0 5.908-2.645 5.908-5.907 3e-3 -3.266-2.646-5.912-5.91-5.91z"/>
+            </svg>
         </div>
     </div>
     <div class="profile__column">
         <h2 class="profile__h2">{{info.h2}}</h2>
-        <h3 class="profile__h3" *ngIf="seccion === 'configuracion'">{{info.h3}}</h3>
+        <h3 class="profile__h3" *ngIf="seccion === 'configuracion' || seccion === 'profile'">{{info.h3}}</h3>
         <p class="profile__chat" *ngIf="seccion === 'chats'">{{info.chat}}</p>
-        <p class="profile__llamada" *ngIf="seccion === 'llamadas'"><i class="fas fa-phone"></i><span>{{info.llamada}}</span></p>
+        <p class="profile__llamada" *ngIf="seccion === 'llamadas'">
+            <svg class="profile__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+            </svg>
+            <span class="profile__span">{{info.llamada}}</span>
+        </p>
         <p class="profile__estado" *ngIf="seccion === 'estados'">{{info.estado}}</p>
     </div>
     <div class="profile__column" *ngIf="seccion !== 'llamadas'">
-        <span class="profile__date" *ngIf="seccion === 'chats'">{{info.date}}</span>
+        <span class="profile__date profile__date--small" *ngIf="seccion === 'chats'">{{info.date}}</span>
         <div class="profile__pines">
-            <i class="profile__i fas fa-volume-mute" *ngIf="seccion === 'chats'"></i>
-            <i class="profile__i fas fa-thumbtack" *ngIf="seccion === 'chats'"></i> 
-            <i class="profile__i fas fa-qrcode" *ngIf="seccion === 'configuracion'"></i> 
+            <div class="profile__icon" *ngIf="seccion === 'profile'">
+                <svg class="profile__svg profile__svg--big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                    <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
+                </svg>
+            </div>
+            <div class="profile__icon" *ngIf="seccion === 'profile'">
+                <svg class="profile__svg profile__svg--big" version="1.1" viewBox="0 0 31.982 31.982" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m3.952 23.15-3.952 8.805 8.767-3.992 0.018 0.019-4.847-4.852 0.014 0.02zm0.65-0.687 20.032-20.031 4.849 4.848-20.033 20.032-4.848-4.849zm26.281-21.522c-2.104-1.963-4.488-0.156-4.488-0.156l4.851 4.843c-2e-3 -1e-3 1.878-2.253-0.363-4.687z"/>
+                </svg>
+            </div>
+            <svg class="profile__svg" *ngIf="seccion === 'chats'" version="1.1" viewBox="0 0 306.26 306.26" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                <path d="m19.747 121.97v70.068c0 21.499 17.43 38.924 38.924 38.924h40.703l112.09 73.612c11.351 6.271 26.808-5.883 34.372-21.256l-198.57-198.57c-15.928 4.878-27.514 19.688-27.514 37.218z"/>
+                <path d="m250.39 41.816c0-21.5-19.464-51.253-38.924-38.924l-102.75 73.607 141.68 141.68v-176.36z"/>
+                <path d="m55.463 83.202 193.15 193.14 18.88 18.874c3.459 3.469 8.005 5.204 12.547 5.204 4.541 0 9.087-1.735 12.552-5.204 6.934-6.929 6.934-18.17 0-25.104l-189.55-189.55-64.266-64.252c-3.461-3.469-8.005-5.204-12.549-5.204s-9.085 1.735-12.552 5.204c-6.937 6.928-6.937 18.17 0 25.101l41.793 41.787z"/>
+            </svg>
+            <svg class="profile__svg" *ngIf="seccion === 'chats'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z"/>
+            </svg>
+            <div class="profile__icon" *ngIf="seccion === 'configuracion'">
+                <svg class="profile__svg profile__svg--big" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="22" y="23" width="3" height="3"/>
+                    <rect x="27" y="27" width="3" height="3"/>
+                    <rect x="18" y="27" width="3" height="3"/>
+                    <rect x="18" y="18" width="12" height="3"/>
+                    <rect x="6" y="22" width="4" height="4"/>
+                    <path d="M14,30H2V18H14ZM4,28h8V20H4Z"/>
+                    <rect x="22" y="6" width="4" height="4"/>
+                    <path d="M30,14H18V2H30ZM20,12h8V4H20Z"/>
+                    <rect x="6" y="6" width="4" height="4"/>
+                    <path d="M14,14H2V2H14ZM4,12h8V4H4Z"/>
+                </svg>
+            </div>   
         </div>
     </div>
     <div class="profile__column simple" *ngIf="seccion === 'llamadas'">
-        <span class="profile__dia" *ngIf="seccion === 'llamadas'">miércoles</span>
+        <span class="profile__date" *ngIf="seccion === 'llamadas'">{{info.date}}</span>
         <div class="profile__pines">
-            <i class="profile__i fas fa-info"></i>
+            <svg class="profile__svg profile__svg--big" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14.93" cy="8.9" r="1.4"/>
+                <path d="m18 20h-2v-8h-3a1 1 0 0 0 0 2h1v6h-2a1 1 0 1 0 0 2h6a1 1 0 0 0 0-2z"/>
+                <path d="M15 3a12 12 0 1 0 12 12A12 12 0 0 0 17 3Zm0 22a10 10 0 1 1 10-10a10 10 0 0 1-10 10Z"/>
+            </svg>
         </div>
     </div>
 </section>
